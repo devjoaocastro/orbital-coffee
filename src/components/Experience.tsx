@@ -695,9 +695,12 @@ export default function Experience() {
         opacity={0.45}
       />
 
-      {/* 0 — Hero: bean asteroids around the copper sun */}
+      {/* 0 — Hero: bean asteroids around the copper sun — pushed back so
+          the sun's glare sits behind the headline instead of on top of it */}
       <Section index={0}>
-        <BeanSystem />
+        <group position={[0, -0.3, -2.8]}>
+          <BeanSystem />
+        </group>
       </Section>
 
       {/* 1 — Origin: two farm planets */}

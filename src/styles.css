@@ -308,9 +308,27 @@ em {
   text-align: center;
 }
 
+/* hero scrim — a soft dark ellipse behind the copy so the headline and
+   sub never fight the sun's glare for contrast */
+.section--hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse 56% 46% at 50% 46%,
+    rgba(10, 6, 3, 0.72),
+    rgba(10, 6, 3, 0.3) 58%,
+    transparent 78%
+  );
+  pointer-events: none;
+}
+
 /* hero entrance --------------------------------------------------- */
 
 .section--hero > * {
+  position: relative;
+  z-index: 1;
   animation: fadeUp 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
